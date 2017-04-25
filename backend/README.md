@@ -30,3 +30,12 @@ Copyright © 2017 Matti Ahinko
 - frontend React + mobx or ClojureScript?
 - Email invite or live invite accept/deny (if connected)
 - Datomic Database https://my.datomic.com/downloads/free
+- State
+  - Connected clients
+  - Joins and parts
+  - Connection status
+- Broadcast
+  - Joins
+  - Parts
+  - Connected count
+- Compress data?
