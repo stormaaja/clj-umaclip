@@ -9,7 +9,11 @@
   (:use org.httpkit.server)
   (:gen-class))
 
-(defonce channels (atom {}))
+(defonce clients (atom #{}))
+
+(defn add-channel
+  [key channel]
+  (swap! clients conj {:key key :channel channel}))
 
 (defn broadcast
   [key message]
