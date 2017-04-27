@@ -41,11 +41,11 @@
 
 (defn on-channel-close!
   [key channel]
-  (remove-channel! key channel))
+  (remove-client! key channel))
 
 (defn on-channel-open!
   [channel key]
-  (add-channel! key channel))
+  (add-client! key channel))
 
 (defn on-channel-receive
   [key data]
