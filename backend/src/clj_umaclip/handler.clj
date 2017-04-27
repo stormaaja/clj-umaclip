@@ -27,6 +27,12 @@
   [key channel]
   (swap! clients conj {:key key :channel channel}))
 
+(defn remove-client!
+  [key channel]
+  (swap!
+    clients
+    {:key key :channel channel}))
+
 (defn broadcast
   [key message]
   (do
