@@ -33,20 +33,6 @@
     (doseq [channel (get-channels-with-key key)]
       (send! channel message))))
 
-(defn set-channel-list!
-  [key channel-list]
-  (swap! channels assoc key channel-list))
-
-(defn remove-channel!
-  [key channel]
-  (set-channel-list! key
-    (remove (fn [c] (= c channel)) (get @channels key))))
-
-(defn add-channel!
-  [key channel]
-  (set-channel-list! key
-    (conj (get @channels key) channel)))
-
 (defn on-channel-close!
   [key channel]
   (remove-channel! key channel))
