@@ -23,7 +23,7 @@
   [key]
   (map :channel (get-clients-with-key key)))
 
-(defn add-channel
+(defn add-client!
   [key channel]
   (swap! clients conj {:key key :channel channel}))
 
