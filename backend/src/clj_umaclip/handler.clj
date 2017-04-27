@@ -31,7 +31,12 @@
   [key channel]
   (swap!
     clients
-    {:key key :channel channel}))
+    #(remove
+      (fn [c]
+        (and
+          (= (:key c) key)
+          (= (:channel c) channel)))
+      %)))
 
 (defn broadcast
   [key message]
