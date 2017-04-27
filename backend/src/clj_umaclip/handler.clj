@@ -15,6 +15,14 @@
   []
   (map :channel @clients))
 
+(defn get-clients-with-key
+  [key]
+  (filter #(= (:key %) key) @clients))
+
+(defn get-channels-with-key
+  [key]
+  (map :channel (get-clients-with-key key)))
+
 (defn add-channel
   [key channel]
   (swap! clients conj {:key key :channel channel}))
