@@ -30,7 +30,7 @@
 (defn broadcast
   [key message]
   (do
-    (doseq [channel (get @channels key)]
+    (doseq [channel (get-channels-with-key key)]
       (send! channel message))))
 
 (defn set-channel-list!
