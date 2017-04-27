@@ -11,6 +11,10 @@
 
 (defonce clients (atom #{}))
 
+(defn get-channels
+  []
+  (map :channel @clients))
+
 (defn add-channel
   [key channel]
   (swap! clients conj {:key key :channel channel}))
